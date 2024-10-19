@@ -1,6 +1,6 @@
 import Header from "./Header/Header";
 import Footer from "./footer/Footer";
-// import LogoutBtn from "./Header/LogoutBtn";
+import LogoutBtn from "./Header/LogoutBtn";
 // import Button from "./Button";
 // import Input from "./Input";
 // import Login from "./Login";
@@ -12,7 +12,7 @@ import Footer from "./footer/Footer";
 export {
     Header,
     Footer,
-    // LogoutBtn,
+    LogoutBtn,
     // Button,
     // Input,
     // Login,
