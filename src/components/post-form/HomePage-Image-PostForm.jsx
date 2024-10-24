@@ -5,7 +5,7 @@ import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function PostForm({ post }) {
+export default function HomePage_Image_PostForm({ post }) {
   const { register, handleSubmit, watch, setValue, getValues } =
     useForm({
       defaultValues: {

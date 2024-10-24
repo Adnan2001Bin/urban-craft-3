@@ -3,11 +3,11 @@ import Footer from "./footer/Footer";
 import LogoutBtn from "./Header/LogoutBtn";
 import Button from "./Button";
 import Input from "./Input";
-// import Login from "./Login";
-// import Signup from "./Signup";
-// import PostForm from "./post-form/PostForm";
-// import Select from "./Select"
-// import AuthLayout from "./AuthLayout"
+import Login from "./Login";
+import Signup from "./Signup";
+import HomePage_Image_PostForm from "./post-form/HomePage-Image-PostForm";
+import Select from "./Select"
+import AuthLayout from "./AuthLayout"
 // import PostCard from "./PostCard";
 export {
     Header,
@@ -15,11 +15,11 @@ export {
     LogoutBtn,
     Button,
     Input,
-    // Login,
-    // Signup,
-    // PostForm,
-    // Select,
-    // AuthLayout,
+    Login,
+    Signup,
+    HomePage_Image_PostForm,
+    Select,
+    AuthLayout,
     // PostCard
 
 }
