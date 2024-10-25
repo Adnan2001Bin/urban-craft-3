@@ -172,7 +172,6 @@
 //   );
 // }
 
-
 import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button, Input, Select } from "..";
@@ -272,7 +271,7 @@ export default function PostForm({ post }) {
 
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-      <div className="w-2/3 px-2">
+      <div className="w-1/3 px-2">
         <Input
           label="Title:"
           placeholder="Title"
@@ -314,23 +313,7 @@ export default function PostForm({ post }) {
           {...register("image3", { required: !post })}
           onChange={(e) => handlePreview(e.target.files, "preview3")}
         />
-      </div>
-      <div className="w-1/3 px-2">
-        {previews.preview1 && (
-          <div className="w-full mb-4">
-            <img src={previews.preview1} alt="Home Page Image 1" className="rounded-lg" />
-          </div>
-        )}
-        {previews.preview2 && (
-          <div className="w-full mb-4">
-            <img src={previews.preview2} alt="Home Page Image 2" className="rounded-lg" />
-          </div>
-        )}
-        {previews.preview3 && (
-          <div className="w-full mb-4">
-            <img src={previews.preview3} alt="Home Page Image 3" className="rounded-lg" />
-          </div>
-        )}
+
         <Select
           options={["active", "inactive"]}
           label="Status"
@@ -341,7 +324,54 @@ export default function PostForm({ post }) {
           {post ? "Update" : "Submit"}
         </Button>
       </div>
+
+      <div className="w-4/6 px-2 grid grid-cols-2 gap-4 border border-gray-500 pt-2">
+        {/* First Column with two stacked images */}
+        <div className="flex flex-col items-center gap-4">
+          {previews.preview1 && (
+            <div className="w-11/12 mb-4">
+              <div className="w-full flex justify-center">
+                <p className="text-center text-white w-20 bg-black">Image 1</p>
+              </div>
+              <img
+                src={previews.preview1}
+                alt="Home Page Image 1"
+                className="rounded-lg"
+              />
+            </div>
+          )}
+          {previews.preview2 && (
+            <div className="w-11/12 mb-4">
+              <div className="w-full flex justify-center">
+                <p className="text-center text-white w-20 bg-black">Image 2</p>
+              </div>
+
+              <img
+                src={previews.preview2}
+                alt="Home Page Image 2"
+                className="rounded-lg"
+              />
+            </div>
+          )}
+        </div>
+
+        {/* Second Column with one centered image */}
+        {previews.preview3 && (
+          <div className="flex justify-center items-center">
+            <div className="w-11/12 mb-4">
+              <div className="w-full flex justify-center">
+                <p className="text-center text-white w-20 bg-black">Image 3</p>
+              </div>
+
+              <img
+                src={previews.preview3}
+                alt="Home Page Image 3"
+                className="rounded-lg"
+              />
+            </div>
+          </div>
+        )}
+      </div>
     </form>
   );
 }
-

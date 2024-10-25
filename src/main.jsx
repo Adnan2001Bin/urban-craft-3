@@ -8,7 +8,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import { AuthLayout, Login, Signup } from "./components/index.js";
 
-import AddHomepageImg from './pages/AddHomepageImg.jsx'
+import AddHomepageImg from "./pages/AddHomepageImg.jsx";
 import EditPost from "./pages/EditPost.jsx";
 import Post from "./pages/Post.jsx";
 import AllPosts from "./pages/AllPosts.jsx";

@@ -37,7 +37,7 @@ export default function Post() {
         if (post.homePageImg3) {
           await appwriteService.deleteFile(post.homePageImg3);
         }
-        navigate("/all-menu");
+        navigate("/Edit WebSite");
       }
     }
   };
@@ -69,9 +69,6 @@ export default function Post() {
           )}
         </figure>
         <div className="card-body">
-          <h1 className="font-fontFooter1 text-xl font-medium mb-1 mt-1">
-            {post.title}
-          </h1>
           
           {isAuthor && (
             <div className="flex justify-end space-x-4">
