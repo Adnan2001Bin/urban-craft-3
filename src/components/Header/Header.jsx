@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {LogoutBtn} from "../index"
-// import EditWebsite from "../ProductCatagories/Edit WebSite/EditWebsite";
+import EditWebsite from '../Edit WebSite/EditWebsite';
 // import BedroomCatagories from "../ProductCatagories/Beedroom/BedroomCatagories";
 
 function Header() {
@@ -82,7 +82,7 @@ function Header() {
       name: "Edit WebSite",
       img: "https://cdn-icons-png.flaticon.com/128/2722/2722987.png",
       active: authStatus && isAuthor,
-      // dropdownMenu: <EditWebsite />,
+      dropdownMenu: <EditWebsite />,
     },
 
   ];
