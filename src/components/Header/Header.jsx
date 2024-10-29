@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LogoutBtn } from "../index";
 import EditWebsite from "../Edit WebSite/EditWebsite";
-// import BedroomCatagories from "../ProductCatagories/Beedroom/BedroomCatagories";
+import BedroomCatagories from "../ProductCatagories/Beedroom/BedroomCatagories";
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,7 +51,7 @@ function Header() {
       img: "https://cdn-icons-png.flaticon.com/128/2722/2722987.png",
       slug: "/BedRoomCatagoriesPage",
       active: authStatus,
-      // dropdownMenu: <BedroomCatagories />
+      dropdownMenu: <BedroomCatagories />
     },
     {
       name: "Dinning",
