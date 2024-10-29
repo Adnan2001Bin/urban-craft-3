@@ -22,11 +22,11 @@ function AllPosts() {
   }
 
   return (
-    <div className="w-full py-8 px-20">
+    <div className="w-full py-8 px-20 bg-red-600">
       <div className="w-full flex justify-center font-fontFooter font-bold text-5xl">
         <h1>Home Page Image</h1>
       </div>
-      <div className="flex justify-center p-2 w-full">
+      <div className="flex bg-blue-gray-500 justify-center p-2 w-full">
         <PostCard {...post} />
       </div>
     </div>
