@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import {LogoutBtn} from "../index"
-import EditWebsite from '../Edit WebSite/EditWebsite';
+import { LogoutBtn } from "../index";
+import EditWebsite from "../Edit WebSite/EditWebsite";
 // import BedroomCatagories from "../ProductCatagories/Beedroom/BedroomCatagories";
 
 function Header() {
@@ -58,7 +58,7 @@ function Header() {
       img: "https://cdn-icons-png.flaticon.com/128/2722/2722987.png",
       slug: "/DinningRoomCatagoriesPage",
       active: authStatus,
-      // dropdownMenu: 
+      // dropdownMenu:
     },
     {
       name: "Living Room",
@@ -84,7 +84,6 @@ function Header() {
       active: authStatus && isAuthor,
       dropdownMenu: <EditWebsite />,
     },
-
   ];
 
   return (
@@ -96,7 +95,7 @@ function Header() {
       <Link to={"/"}>
         <img
           className="w-44 lg:w-48"
-          src="https://drive.google.com/thumbnail?id=10mw3IFxDmqi-apQMCavaUowInlPYnW9-"
+          src="public\Studio Shodwe.png"
           alt="Studio Shodwe"
         />
       </Link>
@@ -111,12 +110,13 @@ function Header() {
               >
                 <button
                   onClick={() => navigate(item.slug)}
-                  className={`hover:font-semibold hover:underline list-none font-fontFooter1 ${
+                  className={`hover:font-medium transition-all duration-100 hover:border-b-2 hover:border-yellow-500 list-none font-fontFooter1 ${
                     location.pathname === item.slug ? "text-yellow-500" : ""
                   }`}
                 >
                   {item.name}
                 </button>
+
                 {item.name !== "Home" && (
                   <img
                     className="w-5 h-5 transform transition-transform duration-300 group-hover:rotate-180"
