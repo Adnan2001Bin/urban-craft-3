@@ -57,7 +57,7 @@ export default function PostForm({ HomepageimgPost }) {
       }
     } else {
       if (file1 && file2 && file3) {
-        const dbPost = await appwriteService.createPost({
+        const dbPost = await appwriteService.createHomePageimgPost({
           ...data,
           homePageImg1: file1.$id,
           homePageImg2: file2.$id,

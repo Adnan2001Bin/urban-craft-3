@@ -15,7 +15,7 @@ export class Service {
     this.bucket = new Storage(this.client);
   }
 
-  async createPost({
+  async createHomePageimgPost({
     title,
     homePageImg1,
     homePageImg2,
@@ -64,6 +64,9 @@ export class Service {
       console.log("Appwrite service :: updatePost :: error", error);
     }
   }
+
+
+  
 
   async deletePost(slug) {
     try {
