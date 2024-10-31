@@ -43,7 +43,7 @@ export class Service {
     }
   }
 
-  async updatePost(
+  async updatePostHomePageImg(
     slug,
     { title, homePageImg1, homePageImg2, homePageImg3, status }
   ) {

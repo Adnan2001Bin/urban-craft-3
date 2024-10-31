@@ -37,7 +37,7 @@ export default function Post() {
         if (post.homePageImg3) {
           await appwriteService.deleteFile(post.homePageImg3);
         }
-        navigate("/Edit WebSite");
+        navigate("/EditHomePageImg");
       }
     }
   };

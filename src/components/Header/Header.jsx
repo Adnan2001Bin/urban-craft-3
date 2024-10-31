@@ -58,7 +58,7 @@ function Header() {
       img: "https://cdn-icons-png.flaticon.com/128/2722/2722987.png",
       slug: "/DinningRoomCatagoriesPage",
       active: authStatus,
-      // dropdownMenu:
+      // dropdownMenu: <DinningCatagories />
     },
     {
       name: "Living Room",
