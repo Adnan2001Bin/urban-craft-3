@@ -5,19 +5,19 @@ import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-export default function PostForm({ post }) {
+export default function PostForm({ HomepageimgPost }) {
   const { register, handleSubmit, watch, setValue } = useForm({
     defaultValues: {
-      title: post?.title || "",
-      slug: post?.$id || "",
-      status: post?.status || "active",
+      title: HomepageimgPost?.title || "",
+      slug: HomepageimgPost?.$id || "",
+      status: HomepageimgPost?.status || "active",
     },
   });
 
   const [previews, setPreviews] = useState({
-    preview1: post ? appwriteService.getFilePreview(post.homePageImg1) : null,
-    preview2: post ? appwriteService.getFilePreview(post.homePageImg2) : null,
-    preview3: post ? appwriteService.getFilePreview(post.homePageImg3) : null,
+    preview1: HomepageimgPost ? appwriteService.getFilePreview(HomepageimgPost.homePageImg1) : null,
+    preview2: HomepageimgPost ? appwriteService.getFilePreview(HomepageimgPost.homePageImg2) : null,
+    preview3: HomepageimgPost ? appwriteService.getFilePreview(HomepageimgPost.homePageImg3) : null,
   });
 
   const navigate = useNavigate();
@@ -44,12 +44,12 @@ export default function PostForm({ post }) {
       ? await appwriteService.uploadFile(data.image3[0])
       : null;
 
-    if (post) {
-      const dbPost = await appwriteService.updatePostHomePageImg(post.$id, {
+    if (HomepageimgPost) {
+      const dbPost = await appwriteService.updatePostHomePageImg(HomepageimgPost.$id, {
         ...data,
-        homePageImg1: file1 ? file1.$id : post.homePageImg1,
-        homePageImg2: file2 ? file2.$id : post.homePageImg2,
-        homePageImg3: file3 ? file3.$id : post.homePageImg3,
+        homePageImg1: file1 ? file1.$id : HomepageimgPost.homePageImg1,
+        homePageImg2: file2 ? file2.$id : HomepageimgPost.homePageImg2,
+        homePageImg3: file3 ? file3.$id : HomepageimgPost.homePageImg3,
       });
 
       if (dbPost) {
@@ -66,7 +66,7 @@ export default function PostForm({ post }) {
         });
 
         if (dbPost) {
-          navigate(`/post/${dbPost.$id}`);
+          navigate(`/HomepageimgPost/${dbPost.$id}`);
         }
       }
     }
@@ -120,7 +120,7 @@ export default function PostForm({ post }) {
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
-          {...register("image1", { required: !post })}
+          {...register("image1", { required: !HomepageimgPost })}
           onChange={(e) => handlePreview(e.target.files, "preview1")}
         />
         <Input
@@ -128,7 +128,7 @@ export default function PostForm({ post }) {
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
-          {...register("image2", { required: !post })}
+          {...register("image2", { required: !HomepageimgPost })}
           onChange={(e) => handlePreview(e.target.files, "preview2")}
         />
         <Input
@@ -136,7 +136,7 @@ export default function PostForm({ post }) {
           type="file"
           className="mb-4"
           accept="image/png, image/jpg, image/jpeg, image/gif"
-          {...register("image3", { required: !post })}
+          {...register("image3", { required: !HomepageimgPost })}
           onChange={(e) => handlePreview(e.target.files, "preview3")}
         />
 
@@ -147,7 +147,7 @@ export default function PostForm({ post }) {
           {...register("status", { required: true })}
         />
         <Button type="submit" className="w-full">
-          {post ? "Update" : "Submit"}
+          {HomepageimgPost ? "Update" : "Submit"}
         </Button>
       </div>
 

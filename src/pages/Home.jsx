@@ -10,10 +10,10 @@ function Home() {
     appwriteService.getPosts().then((response) => {
       if (response) {
         // Flatten the array to have all images in a single array
-        const imageIds = response.documents.flatMap((post) => [
-          post.homePageImg1,
-          post.homePageImg2,
-          post.homePageImg3
+        const imageIds = response.documents.flatMap((HomepageimgPost) => [
+          HomepageimgPost.homePageImg1,
+          HomepageimgPost.homePageImg2,
+          HomepageimgPost.homePageImg3
         ]).filter(Boolean); // Remove any undefined or null values
         setImages(imageIds);
       }

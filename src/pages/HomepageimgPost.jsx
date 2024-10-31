@@ -5,7 +5,7 @@ import { Button } from "../components";
 import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 
-export default function Post() {
+export default function HomepageimgPost() {
   const [post, setPost] = useState(null);
   const { slug } = useParams();
   const navigate = useNavigate();

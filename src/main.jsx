@@ -10,7 +10,7 @@ import { AuthLayout, Login, Signup } from "./components/index.js";
 
 import AddHomepageImg from "./pages/AddHomepageImg.jsx";
 import EditPost from "./pages/EditPost.jsx";
-import Post from "./pages/Post.jsx";
+import HomepageimgPost from "./pages/HomepageimgPost.jsx";
 import AllPosts from "./pages/AllPosts.jsx";
 // import BedRoomCatagoriesPage from "./components/ProductCatagories/Beedroom/BedRoomCatagoriesPage.jsx"
 // import DinningRoomCatagoriesPage from "./components/ProductCatagories/Dinning/DinningRoomCatagoriesPage.jsx"
@@ -66,8 +66,8 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/post/:slug",
-        element: <Post />,
+        path: "/HomepageimgPost/:slug",
+        element: <HomepageimgPost />,
       },
       {
         path: "/All HomePage Img",

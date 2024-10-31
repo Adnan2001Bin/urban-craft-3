@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 function PostCard({ $id, homePageImg1, homePageImg2, homePageImg3 }) {
   return (
-    <Link to={`/post/${$id}`}>
+    <Link to={`/HomepageimgPost/${$id}`}>
       <div className="bg-[#f5f5d6] p-4 rounded-lg shadow-md w-80 bg-red-500">
         <div className="bg-white rounded-lg overflow-hidden">
           <img
