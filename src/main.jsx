@@ -12,7 +12,7 @@ import AddHomepageImg from "./pages/AddHomepageImg.jsx";
 import EditPost from "./pages/EditPost.jsx";
 import HomepageimgPost from "./pages/HomepageimgPost.jsx";
 import AllPosts from "./pages/AllPosts.jsx";
-// import BedRoomCatagoriesPage from "./components/ProductCatagories/Beedroom/BedRoomCatagoriesPage.jsx"
+import BedRoomCatagoriesPage from "./components/ProductCatagories/Beedroom/BedRoomCatagoriesPage.jsx"
 // import DinningRoomCatagoriesPage from "./components/ProductCatagories/Dinning/DinningRoomCatagoriesPage.jsx"
 // import Signup from './pages/AddPost.jsx'
 // import EditPost from "./pages/EditPost.jsx";
@@ -73,10 +73,10 @@ const router = createBrowserRouter([
         path: "/All HomePage Img",
         element: <AllPosts />,
       },
-      // {
-      //   path: "/BedRoomCatagoriesPage",
-      //   element: <BedRoomCatagoriesPage />,
-      // },
+      {
+        path: "/BedRoomCatagoriesPage",
+        element: <BedRoomCatagoriesPage />,
+      },
       // {
       //   path: "/DinningRoomCatagoriesPage",
       //   element: <DinningRoomCatagoriesPage />,
