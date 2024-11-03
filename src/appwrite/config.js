@@ -43,6 +43,25 @@ export class Service {
     }
   }
 
+  async createProduct({ productTitle, productImg, status, userId, slug }) {
+    try {
+      return await this.databases.createDocument(
+        conf.appwriteDatabaseId,
+        conf.appwriteCollectioId,
+        slug,
+        {
+          productTitle,
+          productPrice,
+          productImg,
+          status,
+          userId,
+        }
+      );
+    } catch {
+      console.log("Appwrite service :: createProductImg :: error", error);
+    }
+  }
+
   async updatePostHomePageImg(
     slug,
     { title, homePageImg1, homePageImg2, homePageImg3, status }
@@ -65,8 +84,26 @@ export class Service {
     }
   }
 
-
-  
+  async updateProduct(
+    slug,
+    { productTitle, productPrice, productImg, status }
+  ) {
+    try {
+      return await this.databases.updateDocument(
+        conf.appwriteDatabaseId,
+        conf.appwriteCollectioId,
+        slug,
+        {
+          productTitle,
+          productPrice,
+          productImg,
+          status,
+        }
+      );
+    } catch (error) {
+      console.log("Appwrite service :: updatePost :: error", error);
+    }
+  }
 
   async deletePost(slug) {
     try {
