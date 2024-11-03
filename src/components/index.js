@@ -9,6 +9,7 @@ import HomePage_Image_PostForm from "./post-form/HomePage-Image-PostForm";
 import Select from "./Select"
 import AuthLayout from "./AuthLayout"
 import PostCard from "./PostCard";
+import ProductPostform from "./post-form/Product-Postform"
 export {
     Header,
     Footer,
@@ -20,6 +21,7 @@ export {
     HomePage_Image_PostForm,
     Select,
     AuthLayout,
-    PostCard
+    PostCard,
+    ProductPostform
 
 }

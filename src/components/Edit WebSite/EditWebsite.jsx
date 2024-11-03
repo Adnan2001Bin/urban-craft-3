@@ -35,6 +35,10 @@ const EditWebsite = () => {
             <p>Add HomePage Image</p>
           </div>
         </Link>
+
+        <Link to={"/ProductAdd"}>
+        <p>Add Product</p>
+        </Link>
         
       </div>
     </div>

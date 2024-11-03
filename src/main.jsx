@@ -13,6 +13,7 @@ import EditPost from "./pages/EditPost.jsx";
 import HomepageimgPost from "./pages/HomepageimgPost.jsx";
 import AllPosts from "./pages/AllPosts.jsx";
 import BedRoomCatagoriesPage from "./components/ProductCatagories/Beedroom/BedRoomCatagoriesPage.jsx"
+import ProductAdd from "./pages/ProductAdd.jsx"
 // import DinningRoomCatagoriesPage from "./components/ProductCatagories/Dinning/DinningRoomCatagoriesPage.jsx"
 // import Signup from './pages/AddPost.jsx'
 // import EditPost from "./pages/EditPost.jsx";
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/HomepageimgPost/:slug",
         element: <HomepageimgPost />,
+      },
+      {
+        path:"/ProductAdd",
+        element:<ProductAdd />
       },
       {
         path: "/All HomePage Img",
