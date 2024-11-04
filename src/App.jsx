@@ -4,10 +4,21 @@ import authService from "./appwrite/auth";
 import { login, logout } from "./store/authSlice";
 import { Outlet } from "react-router-dom";
 import { Footer, Header } from "./components";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
+
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
 
   useEffect(() => {
     authService
@@ -25,7 +36,9 @@ function App() {
   return !loading ? (
     <div className="min-h-screen ">
       <div className="w-full block">
-        <Header />
+        {cartIsShown && <Cart onClose={hideCartHandler} />}
+
+        <Header onShowCart={showCartHandler}/>
         <main>
           <Outlet />
         </main>

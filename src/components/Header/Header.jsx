@@ -4,8 +4,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LogoutBtn } from "../index";
 import EditWebsite from "../Edit WebSite/EditWebsite";
 import BedroomCatagories from "../ProductCatagories/Beedroom/BedroomCatagories";
+import HeaderCartButton from "./HeaderCartButton";
 
-function Header() {
+function Header(props) {
   const [scrolled, setScrolled] = useState(false);
   const authStatus = useSelector((state) => state.auth.status);
   const navigate = useNavigate();
@@ -131,6 +132,10 @@ function Header() {
             </div>
           ) : null
         )}
+      </div>
+
+      <div>
+        <HeaderCartButton onClick={props.onShowCart} />
       </div>
       {authStatus && (
         <div className="flex">
