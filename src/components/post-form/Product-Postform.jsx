@@ -34,7 +34,7 @@ export default function ProductPostform({ product }) {
       });
 
       if (dbPost) {
-        navigate(`/product/${dbPost.$id}`);
+        navigate(`/Product/${dbPost.$id}`);
       }
     } else {
       const file = await appwriteService.uploadFile(data.image[0]);
@@ -48,7 +48,7 @@ export default function ProductPostform({ product }) {
         });
 
         if (dbPost) {
-          navigate(`/product/${dbPost.$id}`);
+          navigate(`/Product/${dbPost.$id}`);
         }
       }
     }

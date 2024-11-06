@@ -14,6 +14,7 @@ import HomepageimgPost from "./pages/HomepageimgPost.jsx";
 import AllPosts from "./pages/AllPosts.jsx";
 import BedRoomCatagoriesPage from "./components/ProductCatagories/Beedroom/BedRoomCatagoriesPage.jsx"
 import ProductAdd from "./pages/ProductAdd.jsx"
+import Bed from "./components/Product/Beedroom/Bed.jsx"
 // import DinningRoomCatagoriesPage from "./components/ProductCatagories/Dinning/DinningRoomCatagoriesPage.jsx"
 // import Signup from './pages/AddPost.jsx'
 // import EditPost from "./pages/EditPost.jsx";
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
         path: "/BedRoomCatagoriesPage",
         element: <BedRoomCatagoriesPage />,
       },
+      {
+        path:"/Product",
+        element: <Bed />
+      }
       // {
       //   path: "/DinningRoomCatagoriesPage",
       //   element: <DinningRoomCatagoriesPage />,

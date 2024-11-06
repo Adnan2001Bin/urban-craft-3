@@ -18,7 +18,7 @@ const BedroomCatagories = () => {
       </div>
       <div className='grid grid-cols-2 gap-2 w-full h-full items-center'>
       
-        <Link  to={'/Bed'} className='shadow-md h-full bedItems cursor-pointer'>
+        <Link  to={'/Product'} className='shadow-md h-full bedItems cursor-pointer'>
           <img className='w-24 h-24 mb-2' src="BedRoom\BedRoomCatagories\DSC_4815.jpg" alt="" />
           <h1 className='text-xl font-bold'>BED</h1>
         </Link>

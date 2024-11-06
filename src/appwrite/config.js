@@ -43,11 +43,11 @@ export class Service {
     }
   }
 
-  async createProduct({ productTitle, productImg, status, userId, slug }) {
+  async createProduct({productTitle,productPrice, productImg, status, userId, slug }) {
     try {
       return await this.databases.createDocument(
         conf.appwriteDatabaseId,
-        conf.appwriteCollectioId,
+        conf.appwriteCollectioId_PRODUCTS,
         slug,
         {
           productTitle,
@@ -57,7 +57,7 @@ export class Service {
           userId,
         }
       );
-    } catch {
+    } catch(error) {
       console.log("Appwrite service :: createProductImg :: error", error);
     }
   }
@@ -91,7 +91,7 @@ export class Service {
     try {
       return await this.databases.updateDocument(
         conf.appwriteDatabaseId,
-        conf.appwriteCollectioId,
+        conf.appwriteCollectioId_PRODUCTS,
         slug,
         {
           productTitle,
@@ -117,6 +117,18 @@ export class Service {
     }
   }
 
+  async deleteProduct(slug) {
+    try {
+      return await this.databases.deleteDocument(
+        conf.appwriteDatabaseId,
+        conf.appwriteCollectioId_PRODUCTS,
+        slug
+      );
+    } catch (error) {
+      console.log("Appwrite serive :: deletePost :: error", error);
+    }
+  }
+
   async getPost(slug) {
     try {
       return await this.databases.getDocument(
@@ -130,11 +142,37 @@ export class Service {
     }
   }
 
+  async getProduct(slug) {
+    try {
+      return await this.databases.getDocument(
+        conf.appwriteDatabaseId,
+        conf.appwriteCollectioId_PRODUCTS,
+        slug
+      );
+    } catch (error) {
+      console.log("Appwrite serive :: getPost :: error", error);
+      return false;
+    }
+  }
+
   async getPosts(queries = [Query.equal("status", "active")]) {
     try {
       return await this.databases.listDocuments(
         conf.appwriteDatabaseId,
         conf.appwriteCollectioId,
+        queries
+      );
+    } catch (error) {
+      console.log("Appwrite serive :: getPosts :: error", error);
+      return false;
+    }
+  }
+
+  async getProducts(queries = [Query.equal("status", "active")]) {
+    try {
+      return await this.databases.listDocuments(
+        conf.appwriteDatabaseId,
+        conf.appwriteCollectioId_PRODUCTS,
         queries
       );
     } catch (error) {
